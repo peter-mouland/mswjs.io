@@ -3,13 +3,14 @@ import styled, { css, createGlobalStyle } from 'styled-components'
 import { Box, Composition, Only } from 'atomic-layout'
 
 import { Grid } from '../../components/Grid'
+import Header from '../../components/header'
 import { Breadcrumbs } from './components/Breadcrumbs'
 import { Menu } from './components/Menu'
 import { TableOfContents } from './components/TableOfContents'
 import { DocsPageFooter } from './components/DocsPageFooter'
 import { BaseLayout } from '../../components/BaseLayout'
 import { Footer } from '../../components/Footer'
-import Header from '../../components/header'
+import { CarbonAds } from '../../components/CarbonAds'
 
 interface Props {
   page?: any
@@ -89,6 +90,8 @@ const DocsLayout: React.FC<Props> = ({
           <Menu tree={navTree} isOpen={isMenuOpen} />
           <Box paddingVertical={48}>
             {breadcrumbs.length > 0 && <Breadcrumbs items={breadcrumbs} />}
+            <CarbonAds />
+
             <Box as="article" id="docs-page">
               {children}
             </Box>
